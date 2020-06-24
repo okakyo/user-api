@@ -2,7 +2,7 @@ package service
 
 import (
 	"net/http"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 
@@ -12,18 +12,16 @@ import (
 */
 
 
-func findAllUser() echo.HandlerFunc{
-	return func (c echo.Context) error {
+func FindAllUser(c echo.Context) error {
 		return c.String(http.StatusOK,"Hello World")
 	}
-}
 
-func findUserDetail() echo.HandlerFunc{
-	return func(c echo.Context) error {
+
+func FindUserDetail(c echo.Context) error {
 		userId:= c.Param("userId")
-		return c.String(http.StatusOK,"Goog Luck! "+userId)
+		return c.String(http.StatusOK,"Goog Luck!"+userId)
 	}
-}
+
 
 func createUser() echo.HandlerFunc {
 	return func(c echo.Context) error {
