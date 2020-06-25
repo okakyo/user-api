@@ -23,21 +23,18 @@ func FindUserDetail(c echo.Context) error {
 	}
 
 
-func createUser() echo.HandlerFunc {
-	return func(c echo.Context) error {
+func createUser(c echo.Context) error {
 		return c.String(http.StatusOK,"Good Morning!")
 	}
-}
 
-func updateUser() echo.HandlerFunc{
-	return func(c echo.Context) error {
+
+func updateUser(c echo.Context) error {
 		userId:= c.Param("userId")
 		return c.String(http.StatusOK,"Welcome "+userId)
 	}
-}
-func deleteUser() echo.HandlerFunc{
-	return func(c echo.Context) error {
+
+func deleteUser(c echo.Context) error {
 		userId:= c.Param("userId")
 		return c.String(http.StatusOK,"Goog bye! "+userId)
 	}
-}
+

@@ -6,6 +6,7 @@ import (
 	
 )
 func UserRouter(e *echo.Echo){
-	e.GET("/",service.FindAllUser)
-	e.GET("/:userId",service.FindUserDetail)
+	g:=e.Group("/user")
+	g.GET("/",service.FindAllUser)
+	g.GET("/:userId",service.FindUserDetail)
 }
