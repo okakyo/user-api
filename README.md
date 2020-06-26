@@ -15,3 +15,7 @@ This app manages the user Information.  you access the api server and get user i
     - models      // Define the entities
     - services    // Define the services(usecase, or commands, and query)
     - main.go     // run the app 
+
+
+## Test Deploy 
+- @Heroku 

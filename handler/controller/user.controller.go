@@ -2,7 +2,7 @@ package controller
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/okakyo/user-api/service"
+	"github.com/okakyo/user-api/domain/service"
 	
 )
 func UserRouter(e *echo.Echo){

@@ -5,19 +5,17 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
+var db *gorm.DB
 
+func InitDatabase() {
 
-func InitDatabase() error (
-	
-	if err!=nil {
-		panic(err)
-	}
-
+	// Get Information from Environment Config 
 	db, err := gorm.Open("mysql", "user:password@/dbname?charset=utf8&parseTime=True&loc=Local")
-	db.LogMode(true)
 	if err != nil {
 		panic(err)
 	}
-	db.AutoMigration(&)
-)
+	db.LogMode(true)
+	
+	defer db.Close()
+}
 
