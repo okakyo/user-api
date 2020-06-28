@@ -38,9 +38,10 @@ func FindAllUserData() {
 }
 
 func FindUserByUserId(userId string){
-	var user UserDetail
-	if error:= db.Where(&UserDetail{"userId": userId}).Find(&user).Error;error!=nil{
-
+	var userBase UserBase
+	var userDetail UserDetail
+	if error:= db.Where(&userBase).Find(&userDetail).Error;error!=nil{
+		panic(error)
 	}
 
 }
